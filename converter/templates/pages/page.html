@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Сайтец</title>
+	</head>
+	<body>
+		<script>
+
+			var send = (val) => {
+				console.log(val);
+			var data = null;
+
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+
+			xhr.addEventListener("readystatechange", function () {
+			  if (this.readyState === 4) {
+			    console.log(this.responseText);
+			    document.getElementById('rub').innerHTML = this.responseText
+			  }
+			});
+
+			xhr.open("GET", `http://buchencodenis.pythonanywhere.com//convert?val=${val}`);
+			xhr.setRequestHeader("Cache-Control", "no-cache");
+			xhr.setRequestHeader("Postman-Token", "be1fe6b3-958c-435d-8136-549e4c1efb70");
+
+			xhr.send(data);
+		}
+		</script>
+		<p>usd</p>
+		<input type = "number" pattern="\d+(\.\d{2})?" id = "usd">
+		<p>rub</p>
+		<p id = "rub"></p>
+		<button onclick="send(document.getElementById('usd').value)">отправить</button>
+	</body>
+</html>
