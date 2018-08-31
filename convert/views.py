@@ -10,6 +10,7 @@ def index(request):
 		if page.status_code == 200:
 			soup = BeautifulSoup(page.text, 'html.parser')
 			course = soup.find_all(id="R01235")[0].value.string
+			print(course)
 			course = float(course.replace(",","."))
 			result = float(request.GET["val"])
 			result = result*course

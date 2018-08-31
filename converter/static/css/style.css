@@ -1,0 +1,48 @@
+#block{
+	padding: 32px;
+	padding-top: 8px;
+	background-color: #7fd47f;
+	width: 50%;
+	height: 50px;
+	margin: auto;
+	border-radius: 20px;
+}
+#form{
+	padding: 8px;
+	margin auto;
+	float: left;
+	clear: left;
+	display: block;
+	width: 100%;
+}
+#left{
+	float: left;
+	width: 30%;
+	display: block;
+	margin: 0px;
+}
+#right{
+	width: 30%;
+	float: right;
+	display: block;
+	margin: 0px;
+}
+#usd{
+	height: 26px;
+	width: 35%;
+	border-radius: 5px;
+	border: solid 1px #92ef92;
+}
+#send{
+	height: 26px;
+	border-radius: 5px;
+	background-color: #6bb76b;
+	border: none;
+	width: 20%;
+}
+#rub{
+	height: 26px;
+	border-radius: 5px;
+	border: solid 1px #92ef92;
+	width: 35%;
+}
