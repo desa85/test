@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from bs4 import BeautifulSoup
+from datetime import date
 import requests
 
 def index(request):
 	if request.method == "GET":
-		url = "http://www.cbr.ru/scripts/XML_daily.asp?date_req=30.08.2018"
+		today = date.today().strftime('%d.%m.%Y')
+		url = "http://www.cbr.ru/scripts/XML_daily.asp?date_req="+today
 		page = requests.get(url)
 		if page.status_code == 200:
 			soup = BeautifulSoup(page.text, 'html.parser')
